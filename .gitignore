@@ -1,0 +1,9 @@
+# .gitignore
+# ignore All
+*
+!*/
+
+# Alloow list
+!.gitignore
+!.gitattributes
+!*.c
