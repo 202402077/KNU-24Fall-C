@@ -3,7 +3,7 @@
 
 
 double f(double x) {
-    return -log10(x) + sin(x); 
+    return -log10(1/x) + sin(x); 
 }
 
 
@@ -29,15 +29,15 @@ int main() {
     int max;     
 
     
-    printf("ÀûºÐÇÒ ½ÃÀÛ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ì ë¶„í•  ì‹œìž‘ ê°’ì„ ìž…ë ¥í•˜ì„¸ìš”: ");
     scanf_s("%lf", &start);
-    printf("ÀûºÐÇÒ ³¡ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ì ë¶„í•  ë ê°’ì„ ìž…ë ¥í•˜ì„¸ìš”: ");
     scanf_s("%lf", &end);
-    printf("½ÃÇàÇÒ ÃÖ´ë ±¸°£À» ÀÔ·ÂÇÏ¼¼¿ä(2^n): ");
+    printf("ì‹œí–‰í•  ìµœëŒ€ êµ¬ê°„ì„ ìž…ë ¥í•˜ì„¸ìš”(2^n): ");
     scanf_s("%d", &max);
 
     if (start >= end || max <= 0) {
-        printf("ÀÔ·ÂÀÌ Àß¸øµÇ¾ú½À´Ï´Ù. ½ÃÀÛ °ªÀº ³¡ °ªº¸´Ù ÀÛ¾Æ¾ß ÇÏ¸ç, ÃÖ´ë ±¸°£Àº ¾çÀÇ Á¤¼ö¿©¾ß ÇÕ´Ï´Ù.\n");
+        printf("ìž…ë ¥ì´ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤. ì‹œìž‘ ê°’ì€ ë ê°’ë³´ë‹¤ ìž‘ì•„ì•¼ í•˜ë©°, ìµœëŒ€ êµ¬ê°„ì€ ì–‘ì˜ ì •ìˆ˜ì—¬ì•¼ í•©ë‹ˆë‹¤.\n");
         return 1;
     }
 
@@ -45,7 +45,7 @@ int main() {
     for (int i = 0; i <= max; i++) {
         int panel = pow(2, i); 
         double result = integral(start, end, panel); 
-        printf("±¸°£ %d ÀûºÐ°á°ú: %.6lf\n", panel, result);
+        printf("êµ¬ê°„ %d ì ë¶„ê²°ê³¼: %.6lf\n", panel, result);
     }
 
     return 0;
